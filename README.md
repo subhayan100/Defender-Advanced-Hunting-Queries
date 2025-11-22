@@ -110,7 +110,7 @@ This repository utilizes both the **Microsoft Defender Advanced Hunting** featur
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
-What’s inside the workbook
+## What’s inside the workbook
 
 Parameters: global Time range and Workspace selectors.
 Sections: 11 MITRE ATT&CK tactics (TA0001–TA0011).
@@ -128,7 +128,7 @@ Collection (mass staging, screenshots, mailbox export, clipboard, DB dumps)
 Exfiltration (cloud uploads, DNS TXT bursts, compression + outbound, rclone/megasync)
 Command & Control (beaconing, certutil/BITS, DoH, Tor, reverse shells)
 
-How to import
+## How to import
 Import in the Azure portal (Workbooks UI)
 
 Open Microsoft Sentinel (or Azure Monitor).
