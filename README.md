@@ -104,12 +104,6 @@ This repository utilizes both the **Microsoft Defender Advanced Hunting** featur
   MITRE ATT&CK is a globally-accessible knowledge base of adversarial tactics, techniques, and procedures based on real-world observations. It is widely used by cybersecurity professionals to model threats, assess security postures, and develop detection strategies. The ATT&CK framework helps organizations understand and respond to the full spectrum of cyberattacks.  
   Available: [MITRE ATT&CK](https://attack.mitre.org)
 
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
-
 ## What’s inside the workbook
 
 Parameters: global Time range and Workspace selectors.
