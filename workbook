@@ -1,0 +1,52 @@
+{
+    "version": "1.0",
+    "name": "Advanced Threat Hunting Workbook",
+    "description": "A KQL workbook template for Microsoft Defender Advanced Hunting with queries grouped by MITRE ATT&CK tactics.",
+    "sections": [
+        {
+            "tactic": "Initial Access",
+            "queries": [
+                {
+                    "name": "Suspicious Office Macro Execution",
+                    "description": "Detect Office apps spawning scripts.",
+                    "query": "DeviceProcessEvents | where FileName in (\"winword.exe\", \"excel.exe\") | where ProcessCommandLine has_any (\"powershell\", \"cmd.exe\")"
+                },
+                {
+                    "name": "Execution from Email Attachments",
+                    "description": "Detect executables launched from Outlook.",
+                    "query": "DeviceFileEvents | where InitiatingProcessFileName == \"outlook.exe\" | where FileName endswith \".exe\""
+                }
+            ]
+        },
+        {
+            "tactic": "Execution",
+            "queries": [
+                {
+                    "name": "PowerShell Encoded Commands",
+                    "description": "Detect encoded PowerShell commands.",
+                    "query": "DeviceProcessEvents | where FileName =~ \"powershell.exe\" | where ProcessCommandLine has_any (\"-enc\", \"-EncodedCommand\")"
+                },
+                {
+                    "name": "Suspicious Rundll32 Usage",
+                    "description": "Detect rundll32 executing scripts.",
+                    "query": "DeviceProcessEvents | where FileName =~ \"rundll32.exe\" | where ProcessCommandLine has_any (\"javascript:\", \"shell32.dll\")"
+                }
+            ]
+        },
+        {
+            "tactic": "Persistence",
+            "queries": [
+                {
+                    "name": "Registry Run Key Modification",
+                    "description": "Detect persistence via registry run keys.",
+                    "query": "DeviceRegistryEvents | where RegistryKey has @\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\""
+                },
+                {
+                    "name": "Scheduled Task Creation",
+                    "description": "Detect creation of scheduled tasks.",
+                    "query": "DeviceProcessEvents | where FileName =~ \"schtasks.exe\" | where ProcessCommandLine has \"create\""
+                }
+            ]
+        }
+    ]
+}
