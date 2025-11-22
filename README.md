@@ -109,3 +109,29 @@ This repository utilizes both the **Microsoft Defender Advanced Hunting** featur
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+What’s inside the workbook
+
+Parameters: global Time range and Workspace selectors.
+Sections: 11 MITRE ATT&CK tactics (TA0001–TA0011).
+Queries: 50 proactive hunting KQL queries targeting:
+
+Initial Access (e.g., Office spawning scripts, Outlook attachment exec)
+Execution (PowerShell obfuscation, WMIC, rundll32/mshta/certutil LOTL)
+Persistence (Run/RunOnce, scheduled tasks, startup folders, service creation)
+Privilege Escalation (fodhelper, sdclt, DLL hijack, TrustedInstaller abuse)
+Defense Evasion (event log clear, AV service stop, ADS, LOLBins)
+Credential Access (LSASS dump, mimikatz-family tools, SAM hive export, browser creds)
+Discovery (net/AD recon, Get‑AD cmdlets, system info bursts, process/service discovery)
+Lateral Movement (RDP off-hours, SMB exec, WMI, WinRM/PSSession)
+Collection (mass staging, screenshots, mailbox export, clipboard, DB dumps)
+Exfiltration (cloud uploads, DNS TXT bursts, compression + outbound, rclone/megasync)
+Command & Control (beaconing, certutil/BITS, DoH, Tor, reverse shells)
+
+How to import
+Import in the Azure portal (Workbooks UI)
+
+Open Microsoft Sentinel (or Azure Monitor).
+Go to Workbooks → Import.
+Upload advanced_threat_hunting_workbook_50.json.
+Set your Workspace and Time range parameters at the top of the workbook.
