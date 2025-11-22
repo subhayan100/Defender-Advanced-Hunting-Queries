@@ -106,9 +106,9 @@ This repository utilizes both the **Microsoft Defender Advanced Hunting** featur
 
 ## What’s inside the workbook
 
-### Parameters: global Time range and Workspace selectors.
-### Sections: 11 MITRE ATT&CK tactics (TA0001–TA0011).
-### Queries: 50 proactive hunting KQL queries targeting:
+1. Parameters: global Time range and Workspace selectors.
+2. Sections: 11 MITRE ATT&CK tactics (TA0001–TA0011).
+3. Queries: 50 proactive hunting KQL queries targeting:
 
 Initial Access (e.g., Office spawning scripts, Outlook attachment exec)
 Execution (PowerShell obfuscation, WMIC, rundll32/mshta/certutil LOTL)
